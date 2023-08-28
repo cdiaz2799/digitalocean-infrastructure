@@ -14,7 +14,6 @@ project = do.Project(
     purpose="Web Application",
 )
 region = "sfo"
-vpc = do.get_vpc(name="cdiaz-cloud-vpc-sfo3")
 ansible_ssh_key = "39220637"
 
 # Create App
