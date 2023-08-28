@@ -1,0 +1,6 @@
+name: do-pulumi
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: DigitalOcean Pulumi Resources
