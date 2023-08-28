@@ -1,6 +1,7 @@
 import pulumi
 import pulumi_digitalocean as digitalocean
 from master.project import master_project
+from master.vpc import vpc
 
 # Define Vars
 
@@ -28,4 +29,5 @@ for engine in enabled_engines:
         region=region,
         size=size,
         version=version,
+        private_network_uuid=vpc.id,
     )
