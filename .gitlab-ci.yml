@@ -1,0 +1,25 @@
+stages:
+    - infrastructure-update
+pulumi:
+    stage: infrastructure-update
+    before_script:
+        - chmod +x ./.scripts/*.sh
+        - ./.scripts/setup.sh
+    script:
+        - ./.scripts/run-pulumi.sh
+    artifacts:
+        paths:
+            - pulumi-log.txt
+        expire_in: 1 week
+    only:
+        - master
+
+pulumi-preview:
+    stage: infrastructure-update
+    before_script:
+        - chmod +x ./.scripts/*.sh
+        - ./.scripts/setup.sh
+    script:
+        - ./.scripts/pulumi-preview.sh
+    only:
+        - merge_requests
