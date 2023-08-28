@@ -1,5 +1,3 @@
-"""An AWS Python Pulumi program"""
-
 import importlib
 import os
 
