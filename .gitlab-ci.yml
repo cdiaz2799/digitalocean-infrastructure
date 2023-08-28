@@ -6,13 +6,10 @@ variables:
     PULUMI_STACK: digitalocean
 
 default:
-    image: pulumi/pulumi:latest
+    image: pulumi/pulumi-python:latest
 
 pulumi:
     stage: infrastructure-update
-    before_script:
-        - chmod +x ./.scripts/*.sh
-        - ./.scripts/setup.sh
     script:
         - ./.scripts/run-pulumi.sh
     artifacts:
@@ -24,9 +21,6 @@ pulumi:
 
 pulumi-preview:
     stage: infrastructure-update
-    before_script:
-        - chmod +x ./.scripts/*.sh
-        - ./.scripts/setup.sh
     script:
         - ./.scripts/pulumi-preview.sh
     only:
