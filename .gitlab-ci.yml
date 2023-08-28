@@ -10,6 +10,8 @@ default:
 
 pulumi:
     stage: infrastructure-update
+    before_script:
+        - chmod +x ./.scripts/*.sh
     script:
         - ./.scripts/run-pulumi.sh
     artifacts:
@@ -21,6 +23,8 @@ pulumi:
 
 pulumi-preview:
     stage: infrastructure-update
+    before_script:
+        - chmod +x ./.scripts/*.sh
     script:
         - ./.scripts/pulumi-preview.sh
     only:
