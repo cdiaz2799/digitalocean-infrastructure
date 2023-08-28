@@ -1,5 +1,13 @@
+---
 stages:
     - infrastructure-update
+
+variables:
+    PULUMI_STACK: digitalocean
+
+default:
+    image: pulumi/pulumi:latest
+
 pulumi:
     stage: infrastructure-update
     before_script:

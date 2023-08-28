@@ -7,9 +7,7 @@ set -e -x
 export PATH=$PATH:$HOME/.pulumi/bin
 
 yarn install
-pulumi stack select product-catalog-service
-# The following is just a sample config setting that the hypothetical pulumi
-# program needs.
-# Learn more about pulumi configuration at: https://www.pulumi.com/docs/concepts/config/
+pulumi stack select $PULUMI_STACK
+
 pulumi config set mysetting myvalue
 pulumi up --yes
