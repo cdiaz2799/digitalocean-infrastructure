@@ -12,7 +12,7 @@ pulumi login
 apt-get update -y
 apt-get install sudo -y
 # nodejs
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
 apt-get install -y nodejs
 # yarn
 npm i -g yarn
