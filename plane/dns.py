@@ -11,7 +11,7 @@ dns_record = cloudflare.Record(
     zone_id=zone.zone_id,
     proxied=True,
     value=vm1_ip.id,
-    opts=pulumi.ResourceOptions(depends_on=[vm1]),
+    opts=pulumi.ResourceOptions(depends_on=[vm1_ip]),
 )
 
 pulumi.export("plane-dns", dns_record.hostname)
