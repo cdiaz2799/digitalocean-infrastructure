@@ -14,7 +14,7 @@ pulumi:
         - pip install -r requirements.txt
         - pulumi stack select $PULUMI_STACK        
     script:
-        - pulumi preview
+        - pulumi up --yes --color always --non-interactive 
     artifacts:
         paths:
             - pulumi-log.txt
@@ -28,6 +28,6 @@ pulumi-preview:
         - pip install -r requirements.txt
         - pulumi stack select $PULUMI_STACK
     script:
-        - pulumi preview
+        - pulumi preview --color always --non-interactive 
     only:
         - merge_requests
