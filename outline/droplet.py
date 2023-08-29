@@ -11,9 +11,6 @@ ansible_ssh_key = "39220637"
 with open('cloud-init.yaml', 'r') as file:
     cloud_init = file.read()
 
-# Define VPC
-outline_vpc = do.VPC(')
-
 # Define VM
 outline_vm = do.Droplet(
     f"{app_name}-vm-1",
