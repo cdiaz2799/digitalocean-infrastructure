@@ -11,9 +11,10 @@ default:
 pulumi:
     stage: infrastructure-update
     before_script:
-        - chmod +x ./.scripts/*.sh
+        - pip install -r requirements.txt
+        - pulumi stack select $PULUMI_STACK        
     script:
-        - ./.scripts/run-pulumi.sh
+        - pulumi preview
     artifacts:
         paths:
             - pulumi-log.txt
@@ -24,8 +25,9 @@ pulumi:
 pulumi-preview:
     stage: infrastructure-update
     before_script:
-        - chmod +x ./.scripts/*.sh
+        - pip install -r requirements.txt
+        - pulumi stack select $PULUMI_STACK
     script:
-        - ./.scripts/pulumi-preview.sh
+        - pulumi preview
     only:
         - merge_requests
