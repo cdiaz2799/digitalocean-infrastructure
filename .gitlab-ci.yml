@@ -6,15 +6,15 @@ variables:
     PULUMI_STACK: digitalocean
 
 default:
-    image: pulumi/pulumi-python:latest
+    image: pulumi/pulumi-python:3.79.0
 
 pulumi:
     stage: infrastructure-update
     before_script:
-        - pip install -r requirements.txt
-        - pulumi stack select $PULUMI_STACK        
+        - pip install -r requirements.txt --progress-bar off
+        - pulumi stack select $PULUMI_STACK --color always
     script:
-        - pulumi up --yes --color always --non-interactive 
+        - pulumi up --yes --color always --non-interactive
     artifacts:
         paths:
             - pulumi-log.txt
@@ -25,9 +25,9 @@ pulumi:
 pulumi-preview:
     stage: infrastructure-update
     before_script:
-        - pip install -r requirements.txt
-        - pulumi stack select $PULUMI_STACK
+        - pip install -r requirements.txt --progress-bar off
+        - pulumi stack select $PULUMI_STACK --color always
     script:
-        - pulumi preview --color always --non-interactive 
+        - pulumi preview --color always --non-interactive
     only:
         - merge_requests
