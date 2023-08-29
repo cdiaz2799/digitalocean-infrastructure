@@ -9,15 +9,11 @@ plane_db = do.DatabaseDb(
     "plane-db",
     cluster_id=db.id,
     name="plane",
-    opts=pulumi.ResourceOptions(depends_on=[db])
+    opts=pulumi.ResourceOptions(depends_on=[db]),
 )
 
 # Define Database User
-plane_db_user = do.DatabaseUser(
-    "plane-db-user",
-    cluster_id=db.id,
-    name="plane"
-)
+plane_db_user = do.DatabaseUser("plane-db-user", cluster_id=db.id, name="plane")
 
 # Define Connections Rules
 plane_db_fw = do.DatabaseFirewall(
@@ -28,4 +24,5 @@ plane_db_fw = do.DatabaseFirewall(
             type="droplet",
             value=vm1.id,
         ),
-    ])
+    ],
+)

@@ -8,7 +8,7 @@ region = "sfo3"
 ansible_ssh_key = "39220637"
 
 # Retrieve cloud-init file
-with open('outline/cloud-init.yaml', 'r') as file:
+with open("outline/cloud-init.yaml", "r") as file:
     cloud_init = file.read()
 
 # Define VM
@@ -38,5 +38,5 @@ outline_project = do.ProjectResources(
     project=project.id,
     resources=[
         outline_vm.droplet_urn,
-    ]
+    ],
 )

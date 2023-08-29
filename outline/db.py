@@ -10,15 +10,11 @@ outline_db = do.DatabaseDb(
     "outline-db",
     cluster_id=db.id,
     name="outline",
-    opts=pulumi.ResourceOptions(depends_on=[db])
+    opts=pulumi.ResourceOptions(depends_on=[db]),
 )
 
 # Define Database User
-outline_db_user = do.DatabaseUser(
-    "outline-db-user",
-    cluster_id=db.id,
-    name="outline"
-)
+outline_db_user = do.DatabaseUser("outline-db-user", cluster_id=db.id, name="outline")
 
 # Define Connections Rules
 outline_db_fw = do.DatabaseFirewall(
@@ -29,4 +25,5 @@ outline_db_fw = do.DatabaseFirewall(
             type="droplet",
             value=outline_vm.id,
         ),
-    ])
+    ],
+)
