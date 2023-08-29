@@ -8,7 +8,7 @@ region = "sfo3"
 ansible_ssh_key = "39220637"
 
 # Retrieve cloud-init file
-with open('cloud-init.yaml', 'r') as file:
+with open('outline/cloud-init.yaml', 'r') as file:
     cloud_init = file.read()
 
 # Define VM

@@ -8,6 +8,8 @@ users:
   sudo: ALL=(ALL) NOPASSWD:ALL
   shell: /bin/bash
   lock_passwd: true
+  ssh_authroized_keys:
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz1/+4gq0d5c8hp0ynLLsV/zGDKVHaiFhfm49jo+z9PN3pVPQmYufuz8YIYq2775luomBmwVeJDMEStxZ68XgOAAPoaR+eCx2iPblKb9itPxtq7QO4P5XHwv8UGeI/n4uOI1RclL1VLc2aZ9ugyIFnZxl1VoBg0ihllIOUApOTr4w3Why16irZqkC4eSZx4QjWYFrmC/BZRWztrCTmPYnIIMZDONqih+jdvA53asNWlKns324c4JibPL5nYghSUmsn7EW6gecdn0kZ01Zo/10rGgQY5m+dck3kXxv2lgONs/AneG7PiJE4LvmDaHPlsmRd43ZaBu5AP/ZmsRFZxXnU8Hk7FbZJuATO7KEhQUzlqL8c8fY3gb5wT74jWVYPtnM7r1vbBdLyPTJtbwSnoNztz3S3uJ0rpKkuagFa/T8kV0plreCD6QgLodN9WCdlm86JJmolvpMXVaZwS1L2dTvRDnmtFsR5nD17IE1DwH/g5o45/kFA13B5GYKQ6/roouk="
 
 package_update: true
 package_upgrade: true
