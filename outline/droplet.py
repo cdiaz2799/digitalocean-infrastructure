@@ -7,6 +7,13 @@ app_name = "outline"
 region = "sfo3"
 ansible_ssh_key = "39220637"
 
+# Retrieve cloud-init file
+with open('cloud-init.yaml', 'r') as file:
+    cloud_init = file.read()
+
+# Define VPC
+outline_vpc = do.VPC(')
+
 # Define VM
 outline_vm = do.Droplet(
     f"{app_name}-vm-1",
@@ -17,6 +24,7 @@ outline_vm = do.Droplet(
     droplet_agent=True,
     monitoring=True,
     ssh_keys=[ansible_ssh_key],
+    user_data=cloud_init,
     vpc_uuid=vpc.id,
 )
 
