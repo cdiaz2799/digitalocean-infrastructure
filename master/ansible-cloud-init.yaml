@@ -1,0 +1,35 @@
+---
+package_update: true
+package_upgrade: true
+
+ssh_pwauth: false
+
+groups:
+  - docker
+
+system_info:
+  default_user:
+    groups: [ docker ]
+
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - unattended-upgrades
+
+users:
+  - name: ansible
+    gecos: Ansible User
+    groups: users,admin,wheel
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: true
+
+runcmd:
+  - curl -fsSL https://get.docker.com | sh
+  - curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | bash
+  - apt-get install gitlab-runner -y
+
+
