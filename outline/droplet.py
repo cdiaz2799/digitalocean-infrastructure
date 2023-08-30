@@ -40,3 +40,4 @@ outline_project = do.ProjectResources(
         outline_vm.droplet_urn,
     ],
 )
+

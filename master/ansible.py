@@ -13,7 +13,7 @@ tags = [
 ]
 
 # Retrieve cloud-init file
-with open("master/ansible-cloud-init.yaml", "r") as file:
+with open("master/cloud-init.yaml", "r") as file:
     cloud_init = file.read()
 
 # Define VM / Droplet
