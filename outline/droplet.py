@@ -6,6 +6,9 @@ from outline.project import project
 app_name = "outline"
 region = "sfo3"
 ansible_ssh_key = "39220637"
+tags = [
+    app_name,
+]
 
 # Retrieve cloud-init file
 with open("outline/cloud-init.yaml", "r") as file:
@@ -15,7 +18,7 @@ with open("outline/cloud-init.yaml", "r") as file:
 outline_vm = do.Droplet(
     f"{app_name}-vm-1",
     name=f"{app_name}-vm-1",
-    image="ubuntu-22-04-x64",
+    image="rockylinux-9-x64",
     region=region,
     size="s-1vcpu-1gb",
     droplet_agent=True,
@@ -23,6 +26,7 @@ outline_vm = do.Droplet(
     ssh_keys=[ansible_ssh_key],
     user_data=cloud_init,
     vpc_uuid=vpc.id,
+    tags=tags,
 )
 
 # Define IP Reservation
@@ -40,4 +44,3 @@ outline_project = do.ProjectResources(
         outline_vm.droplet_urn,
     ],
 )
-
