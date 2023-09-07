@@ -10,10 +10,11 @@
 <img src="https://img.shields.io/badge/Pulumi-8A3391.svg?style&logo=Pulumi&logoColor=white" alt="Pulumi" />
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style&logo=Python&logoColor=white" alt="Python" />
 </p>
-<img src="https://img.shields.io/github/languages/top/cdiaz2799/digitalocean-infrastructure.git?style&color=5D6D7E" alt="GitHub top language" />
-<img src="https://img.shields.io/github/languages/code-size/cdiaz2799/digitalocean-infrastructure.git?style&color=5D6D7E" alt="GitHub code size in bytes" />
-<img src="https://img.shields.io/github/commit-activity/m/cdiaz2799/digitalocean-infrastructure.git?style&color=5D6D7E" alt="GitHub commit activity" />
-<img src="https://img.shields.io/github/license/cdiaz2799/digitalocean-infrastructure.git?style&color=5D6D7E" alt="GitHub license" />
+<img src="https://img.shields.io/github/languages/top/cdiaz2799/digitalocean-infrastructure?color=5D6D7E
+" alt="GitHub top language" />
+<img src="https://img.shields.io/github/languages/code-size/cdiaz2799/digitalocean-infrastructure?style&color=5D6D7E" alt="GitHub code size in bytes" />
+<img src="https://img.shields.io/github/commit-activity/m/cdiaz2799/digitalocean-infrastructure?style&color=5D6D7E" alt="GitHub commit activity" />
+<img src="https://img.shields.io/github/license/cdiaz2799/digitalocean-infrastructure?style&color=5D6D7E" alt="GitHub license" />
 </div>
 
 ---
